@@ -2,15 +2,6 @@
 
 ## Membros do Time 
 
-<style>
-   
-    div ul .link > a
-    {
-
-        font-size:17px;
-        color:#fff;
-    }
-</style>
 <div>
     <ul>
         <li class="link">
