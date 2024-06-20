@@ -3,9 +3,7 @@
 ## Membros do Time 
 
 <style>
-    *{
-        font-family:"Arial,sans-serif";
-    }
+   
     div ul .link > a
     {
 
@@ -16,15 +14,15 @@
 <div>
     <ul>
         <li class="link">
-            <a href="https://github.com/Dev-kyw3010">Eduardo Kim</a>
+            <a href="https://github.com/Dev-kyw3010" style="font-size:17px;color:#fff">Eduardo Kim</a>
             <span>;</span>
         </li>
         <li class="link">
-            <a href="https://github.com/leebortnik">Letícia Bortnik</a>
+            <a href="https://github.com/leebortnik" style="font-size:17px;color:#fff">Letícia Bortnik</a>
             <span>;</span>
         </li>
         <li class="link">
-            <a href="https://github.com/RealTastes">Walter Teles</a>
+            <a href="https://github.com/RealTastes" style="font-size:17px;color:#fff">Walter Teles</a>
             <span>;</span>
         </li>
     </ul>
