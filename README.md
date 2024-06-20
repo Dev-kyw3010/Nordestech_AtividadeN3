@@ -71,14 +71,34 @@ __`onPause()`__ = Esse método é chamado quando a _Activity_ não está mais em
 ``` kotlin
     override fun onPause() {
         super.onPause()
-        // Código para pausar operações
+        // Código para pausar operações.
     }
 ```
 ---
-__`onStop()`__ = Esse método é chamado quando a _Activity_ ão é mais visível para o usuário .Neste ponto, a _Activity_ pode estar prestes a ser destruída ou pode ser retomada posteriormente.
-* 
+__`onStop()`__ = Esse método é chamado quando a _Activity_ não é mais visível para o usuário. Neste ponto, a _Activity_ pode estar prestes a ser destruída ou pode ser retomada posteriormente, como quando o aplicativo é colocado em segundo plano. A gerência desse método é de suma importância, já que é responsável por todas as atividades  que continuam rodando quando o aplicativo não está aberto e as que não continuarão rodando.
 
+
+* __Uso Comum:__ Gerência de atividades quando o aplicativo não está aberto.
+```kotlin
+override fun onStop() {
+    super.onStop()
+    // Administração de atividades em segundo plano.
+}
+```
+
+__`onRestart()`__ = 
 ## Métodos de Destruição
+
+__`onDestroy()`__ = O onDestroy é basicamente a última chamada recebida antes que a __Activity__ seja finalizada. Pode acontecer de algumas formas, como por exemplo o sistema expurgar a Activity para economizar espaço ou quando alguém dá trigger no "finish()". Nunca deve ser utilizado para chamadas importantes que ficam ativadas após o fim do processo, já que pode causar a inutilização das mesmas, o correto seria utilizar o onStop ou onPause.
+
+* __Uso Comum__: Realização de operação final antes da destruição da Activity.
+```kotlin
+    override fun onDestroy() {
+        super.onDestroy()
+        // Usado para liberar recursos finais.
+    }
+```
+
 
 ---
 # Imagem de Demonstração
