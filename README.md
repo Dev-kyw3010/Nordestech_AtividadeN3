@@ -4,16 +4,16 @@
 
 <div>
     <ul>
-        <li class="link">
-            <a href="https://github.com/Dev-kyw3010" style="font-size:18px;color:#fff;">Eduardo Kim</a>
+        <li class="link" style="font-size:18px;color:#fff;">
+            <a href="https://github.com/Dev-kyw3010">Eduardo Kim</a>
             <span>;</span>
         </li>
-        <li class="link">
-            <a href="https://github.com/leebortnik" style="font-size:18px;color:#fff;">Letícia Bortnik</a>
+        <li class="link" style="font-size:18px;color:#fff;">
+            <a href="https://github.com/leebortnik">Letícia Bortnik</a>
             <span>;</span>
         </li>
-        <li class="link">
-            <a href="https://github.com/RealTastes" style="font-size:18px;color:#fff;">Walter Teles</a>
+        <li class="link" style="font-size:18px;color:#fff;">
+            <a href="https://github.com/RealTastes">Walter Teles</a>
             <span>;</span>
         </li>
     </ul>
