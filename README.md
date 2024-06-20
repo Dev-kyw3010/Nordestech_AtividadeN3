@@ -76,12 +76,15 @@ __`onPause()`__ = Esse método é chamado quando a _Activity_ não está mais em
 ```
 ---
 __`onStop()`__ = Esse método é chamado quando a _Activity_ ão é mais visível para o usuário .Neste ponto, a _Activity_ pode estar prestes a ser destruída ou pode ser retomada posteriormente.
-* 
+* __Uso Comum__ :  
+
 
 ## Métodos de Destruição
 
----
-# Imagem de Demonstração
+__`onDestroy()`__ = 
+
+* __Uso comum__ : 
+## Imagem de Demonstração
 
 ![Ciclo de Vida da Activity](/img/ciclo_de_vida_Activity.webp)
 
