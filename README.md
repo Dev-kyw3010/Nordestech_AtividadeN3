@@ -23,7 +23,7 @@
 
 ### Introdução 
 
-> A `Activity` é um componente fundamental que representa uma única tela com uma interface do usuário. O seu ciclo de vida descreve as diversas fases pelas quais uma activity passa desde a sua criação até a sua destruição , e compreender e gerenciar adequadamente esse ciclo é essencial para construir aplicativos responsivos e eficientes .
+> A __Activity__ é um componente fundamental que representa uma única tela com uma interface do usuário. O seu ciclo de vida descreve as diversas fases pelas quais uma activity passa desde a sua criação até a sua destruição , e compreender e gerenciar adequadamente esse ciclo é essencial para construir aplicativos responsivos e eficientes .
 > 
 Além disso , o ciclo de vida é composto por vários métodos que são chamados pelo sistema Android em diferentes momentos. Estes métodos são classificados em três grupos principais :
 
@@ -32,9 +32,7 @@ Além disso , o ciclo de vida é composto por vários métodos que são chamados
 3. [__Métodos de Destruição__](#métodos-de-destruição)
 
 
-## Os Métodos :
-
-### Métodos de Criação e Inicialização
+## Métodos de Criação e Inicialização
 
 __`onCreate()`__ = Esse método é o primeiro a ser chamado quando a _Activity_ é criada. Ele é usado para inicializar a _Activity_ , incluindo a configuração da interface do usuário e a inicialização de componentes essenciais.
 * __Uso Comum__ = Configuração  da UI , inicialização de variáveis , vinculação de layouts usando <span style="color:#ff00aa">setContentView()</span>
@@ -66,7 +64,7 @@ __`onResume()`__ = Esse método é chamado quando a _Activity_ começa a interag
         // Reiniciar processos que estava pausados
     }
 ```
-### Métodos de Parada e Reinício
+## Métodos de Parada e Reinício
 
 __`onPause()`__ = Esse método é chamado quando a _Activity_ não está mais em primeiro plano , mas ainda está visível. É um momento apropriado para salvar o estado da _Activity_ e pausar as operações que não são mais necessárias .
 * __Uso Comum__: Salvar dados temporários, liberar recursos que podem ser retomados quando a *Activity* voltar a interagir.
@@ -80,7 +78,7 @@ __`onPause()`__ = Esse método é chamado quando a _Activity_ não está mais em
 __`onStop()`__ = Esse método é chamado quando a _Activity_ ão é mais visível para o usuário .Neste ponto, a _Activity_ pode estar prestes a ser destruída ou pode ser retomada posteriormente.
 * 
 
-### Métodos de Destruição
+## Métodos de Destruição
 
 ---
 # Imagem de Demonstração
