@@ -23,9 +23,9 @@
 
 ### Introdução 
 
-> A __Activity__ é um componente fundamental que representa uma única tela com uma interface do usuário. O seu ciclo de vida descreve as diversas fases pelas quais uma activity passa desde a sua criação até a sua destruição , e compreender e gerenciar adequadamente esse ciclo é essencial para construir aplicativos responsivos e eficientes .
+> A __Activity__ é um componente fundamental que representa uma única tela com uma interface do usuário. O seu ciclo de vida descreve as diversas fases pelas quais uma activity passa desde a sua criação até a sua destruição, e compreender e gerenciar adequadamente esse ciclo é essencial para construir aplicativos responsivos e eficientes.
 > 
-Além disso , o ciclo de vida é composto por vários métodos que são chamados pelo sistema Android em diferentes momentos. Estes métodos são classificados em três grupos principais :
+Além disso, o ciclo de vida é composto por vários métodos que são chamados pelo sistema Android em diferentes momentos. Estes métodos são classificados em três grupos principais:
 
 1. [ __Métodos de Criação e Inicialização__](#métodos-de-criação-e-inicialização)
 2. [__Métodos de Parada e Reinício__](#métodos-de-parada-e-reinício)
@@ -34,8 +34,8 @@ Além disso , o ciclo de vida é composto por vários métodos que são chamados
 
 ## Métodos de Criação e Inicialização
 
-__`onCreate()`__ = Esse método é o primeiro a ser chamado quando a _Activity_ é criada. Ele é usado para inicializar a _Activity_ , incluindo a configuração da interface do usuário e a inicialização de componentes essenciais.
-* __Uso Comum__ = Configuração  da UI , inicialização de variáveis , vinculação de layouts usando <span style="color:#ff00aa">setContentView()</span>
+__`onCreate()`__ = Esse método é o primeiro a ser chamado quando a _Activity_ é criada. Ele é usado para inicializar a _Activity_, incluindo a configuração da interface do usuário e a inicialização de componentes essenciais.
+* __Uso Comum__ = Configuração da UI, inicialização de variáveis, vinculação de layouts usando <span style="color:#ff00aa">setContentView()</span>
 ``` Kotlin
 
     override fun onCreate(savedInstanceState: Bundle?){
@@ -44,10 +44,10 @@ __`onCreate()`__ = Esse método é o primeiro a ser chamado quando a _Activity_ 
     }
 ```
 ---
- __`onStart()`__ = Após o _onCreate()_ , o próximo método é o __onStart()__ , esse método indica que a _Activity_ está prestes a se tornar visível para o usuário.
+ __`onStart()`__ = Após o _onCreate()_, o próximo método é o __onStart()__, esse método indica que a _Activity_ está prestes a se tornar visível para o usuário.
 * __Uso Comum__: Configurações que devem ser feitas quando a Activity está visível, mas ainda não está no foco interativo.
 
-``` kotlin
+```kotlin
     override fun onStart(){
         super.onStart()
         // Código para reiniciar atualizações ou animações , etc 
@@ -66,7 +66,7 @@ __`onResume()`__ = Esse método é chamado quando a _Activity_ começa a interag
 ```
 ## Métodos de Parada e Reinício
 
-__`onPause()`__ = Esse método é chamado quando a _Activity_ não está mais em primeiro plano , mas ainda está visível. É um momento apropriado para salvar o estado da _Activity_ e pausar as operações que não são mais necessárias .
+__`onPause()`__ = Esse método é chamado quando a _Activity_ não está mais em primeiro plano, mas ainda está visível. É um momento apropriado para salvar o estado da _Activity_ e pausar as operações que não são mais necessárias.
 * __Uso Comum__: Salvar dados temporários, liberar recursos que podem ser retomados quando a *Activity* voltar a interagir.
 ``` kotlin
     override fun onPause() {
