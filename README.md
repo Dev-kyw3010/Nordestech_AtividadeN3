@@ -2,29 +2,18 @@
 
 ## Membros do Time 
 
-<style>
-    *{
-        font-family:"Arial,sans-serif";
-    }
-    div ul .link > a
-    {
-
-        font-size:17px;
-        color:#fff;
-    }
-</style>
 <div>
     <ul>
         <li class="link">
-            <a href="https://github.com/Dev-kyw3010">Eduardo Kim</a>
+            <a href="https://github.com/Dev-kyw3010" style="font-size:18px;color:#fff;">Eduardo Kim</a>
             <span>;</span>
         </li>
         <li class="link">
-            <a href="https://github.com/leebortnik">Letícia Bortnik</a>
+            <a href="https://github.com/leebortnik" style="font-size:18px;color:#fff;">Letícia Bortnik</a>
             <span>;</span>
         </li>
         <li class="link">
-            <a href="https://github.com/RealTastes">Walter Teles</a>
+            <a href="https://github.com/RealTastes" style="font-size:18px;color:#fff;">Walter Teles</a>
             <span>;</span>
         </li>
     </ul>
@@ -32,52 +21,69 @@
 
 ## Ciclo da Vida de uma Activity
 
-> __É um conjunto de métodos que são chamados em diferentes momentos durante a existência de uma Activity . Esses métodos permitem gerenciar o estado da Activity e responder a eventos importantes de seu ciclo de vida .__
+### Introdução 
 
-### Métodos de Uma Activity:
+> A `Activity` é um componente fundamental que representa uma única tela com uma interface do usuário. O seu ciclo de vida descreve as diversas fases pelas quais uma activity passa desde a sua criação até a sua destruição , e compreender e gerenciar adequadamente esse ciclo é essencial para construir aplicativos responsivos e eficientes .
+> 
+Além disso , o ciclo de vida é composto por vários métodos que são chamados pelo sistema Android em diferentes momentos. Estes métodos são classificados em três grupos principais :
 
-#### `onCreate(Bundle savedInstanceState)`:
+1. [ __Métodos de Criação e Inicialização__](#métodos-de-criação-e-inicialização)
+2. [__Métodos de Parada e Reinício__](#métodos-de-parada-e-reinício)
+3. [__Métodos de Destruição__](#métodos-de-destruição)
 
-+ Chamada quando a Activity é criada pela primeira vez .
-+ Neste método, você deve realizar a inicialização da Activity, como configurar a interface do usuário, inicializar variáveis, etc.
 
-#### `onStart()`:
+## Os Métodos :
 
-+ É chamado quando a Activity se torna visível para o usuário.
-+ Aqui você pode iniciar processos que precisam ser executados quando a Activity está visível, como iniciar serviços , atualizar a interface do usuário , etc.
+### Métodos de Criação e Inicialização
 
-#### `onResume()`:
+__`onCreate()`__ = Esse método é o primeiro a ser chamado quando a _Activity_ é criada. Ele é usado para inicializar a _Activity_ , incluindo a configuração da interface do usuário e a inicialização de componentes essenciais.
+* __Uso Comum__ = Configuração  da UI , inicialização de variáveis , vinculação de layouts usando <span style="color:#ff00aa">setContentView()</span>
+``` Kotlin
 
-+ Chamado quando a Activity entra no estado ativo e começa a interagir com o usuário. 
-+ Neste método , você pode retomar operações que foram pausadas , como reprodução de áudio ou vídeo.
+    override fun onCreate(savedInstanceState: Bundle?){
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+    }
+```
+---
+ __`onStart()`__ = Após o _onCreate()_ , o próximo método é o __onStart()__ , esse método indica que a _Activity_ está prestes a se tornar visível para o usuário.
+* __Uso Comum__: Configurações que devem ser feitas quando a Activity está visível, mas ainda não está no foco interativo.
 
-#### `onPause()`:
+``` kotlin
+    override fun onStart(){
+        super.onStart()
+        // Código para reiniciar atualizações ou animações , etc 
+    }
+```
+---
+__`onResume()`__ = Esse método é chamado quando a _Activity_ começa a interagir com o usuário. A partir desse momento a _Activity_ está em primeiro plano e pronta para receber entradas do usuário.
+* __Uso Comum__: Retomar atividades pausadas, como animações, áudio ou vídeo.
 
-+ É chamado quando a Activity é interrompida e perde o foco , mas ainda está visível.
-+ Neste método, você deve salvar o estado da Activity, pausar operações que não devem ser executadas em segundo plano, etc.
+``` kotlin
 
-#### `onStop()`:
+    override fun onResume(){
+        super.onResume()
+        // Reiniciar processos que estava pausados
+    }
+```
+### Métodos de Parada e Reinício
 
-+ É chamado quando a Activity não está mais visível para o usuário.
-+ Neste método, você deve parar operações que não devem ser executadas quando a Activity não está visível, como animações, atualizações de interface do usuário, etc.
+__`onPause()`__ = Esse método é chamado quando a _Activity_ não está mais em primeiro plano , mas ainda está visível. É um momento apropriado para salvar o estado da _Activity_ e pausar as operações que não são mais necessárias .
+* __Uso Comum__: Salvar dados temporários, liberar recursos que podem ser retomados quando a *Activity* voltar a interagir.
+``` kotlin
+    override fun onPause() {
+        super.onPause()
+        // Código para pausar operações
+    }
+```
+---
+__`onStop()`__ = Esse método é chamado quando a _Activity_ ão é mais visível para o usuário .Neste ponto, a _Activity_ pode estar prestes a ser destruída ou pode ser retomada posteriormente.
+* 
 
-#### `onDestroy()`:
-
-+ É chamado quando a Activity está prestes a ser destruída.
-+ Neste método, você deve liberar todos os recursos alocados pela Activity, como fechar conexões de banco de dados, parar serviços, etc.
-
-#### `onSaveInstanceState(Bundle outState)`:
-
-+ É chamado antes de a Activity ser destruída, para que você possa salvar o estado da Activity.
-+ Neste método , você deve salvar todas as informações necessárias para restaurar o estado da Activity quando ela for recriada.
-
-#### `onRestoreInstanceState(Bundle savedInstanceState)`:
-
-+ É chamado após a Activity ser recriada, para que você possa restaurar o estado da Activity.
-+ Neste método, você deve restaurar o estado da Activity usando as informações salvas no método [**onSaveInstanceState()**](#onsaveinstancestatebundle-outstate).
+### Métodos de Destruição
 
 ---
-## Imagem de Demonstração
+# Imagem de Demonstração
 
 ![Ciclo de Vida da Activity](/img/ciclo_de_vida_Activity.webp)
 
