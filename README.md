@@ -70,4 +70,4 @@
 
 ![Ciclo de Vida da Activity](/img/ciclo_de_vida_Activity.webp)
 
-
+## Falando Sobre a Estrutura ( FAZER )
