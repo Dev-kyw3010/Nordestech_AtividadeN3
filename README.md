@@ -86,7 +86,17 @@ override fun onStop() {
 }
 ```
 
-__`onRestart()`__ = 
+__`onRestart()`__ = O onRestart é __apenas__ ativado quando o usuário retorna ao aplicativo depois de deixá-lo em segundo plano, voltando a aplicação à partir do ponto de parada (Do onStop). Ele é mais focado em restauração de tarefas específicas e acomodação de recursos adicionados após a parada temporário do app, como a ativação da rotação de telas.
+
+* __Uso Comum__: Restaurar atividades após onStop e acomodar novos recursos.
+
+```kotlin
+    override fun onRestart() {
+    super.onRestart()
+    // Código para reconfigurar o estado
+}
+```
+
 ## Métodos de Destruição
 
 __`onDestroy()`__ = O onDestroy é basicamente a última chamada recebida antes que a __Activity__ seja finalizada. Pode acontecer de algumas formas, como por exemplo o sistema expurgar a Activity para economizar espaço ou quando alguém dá trigger no "finish()". Nunca deve ser utilizado para chamadas importantes que ficam ativadas após o fim do processo, já que pode causar a inutilização das mesmas, o correto seria utilizar o onStop ou onPause.
